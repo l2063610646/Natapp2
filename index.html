@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>My Natappp</title>
+	</head>
+	<body>
+		<p id="msg"></p>
+	</body>
+	<script type="text/javascript">
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "test.txt", true);
+		xhr.onload = function() {
+			if (this.status == 200) {
+				var res = this.response;
+				document.getElementById("msg").innerText = res;
+			}
+		}
+		xhr.send();
+	</script>
+</html>
